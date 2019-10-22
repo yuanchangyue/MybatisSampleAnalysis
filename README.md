@@ -50,8 +50,11 @@ SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(confi
         UserDao mapper = sqlSession.getMapper(UserDao.class);
         List<Map<String, Object>> list = mapper.getList();
         System.out.println(list);
+
     }
 ```
+
+![](https://github.com/yuanchangyue/MybatisSampleAnalysis/blob/master/img/%E6%89%A7%E8%A1%8C%E6%88%90%E5%8A%9F2.png?raw=true)
 
 > 通过以上的Mybatis的代码可以知道, UserDao接口我们是没有自己去实现的,
 > 接口也是不能直接new出来的,只能去实现接口中的方法 
@@ -83,11 +86,11 @@ public class UserDaoImpl implements UserDao {
 
 选中`getMapper`使用idea的快捷键`ctrl`+`alt`+`b`  ， 查看`getMapper`实现类
 
-![](https://github.com/yuanchangyue/handwritingmybais/blob/master/img/getMapper.png?raw=true)
+![](https://github.com/yuanchangyue/MybatisSampleAnalysis/blob/master/img/getMapper.png?raw=true)
 
 最后找到：
 
-![](https://github.com/yuanchangyue/handwritingmybais/blob/master/img/newProxyInstance.png?raw=true)
+![](https://github.com/yuanchangyue/MybatisSampleAnalysis/blob/master/img/newProxyInstance.png?raw=true)
 
 **可以知道Mybatis使用的是jdk的动态代理，将一个接口变成一个对象**
 
@@ -169,7 +172,7 @@ public interface UserDao {
 
 结果：
 
-![](https://github.com/yuanchangyue/handwritingmybais/blob/master/img/%E6%89%A7%E8%A1%8C%E6%88%90%E5%8A%9F.png?raw=true)
+![](https://github.com/yuanchangyue/MybatisSampleAnalysis/blob/master/img/%E6%89%A7%E8%A1%8C%E6%88%90%E5%8A%9F.png?raw=true)
 
 **使用动态代理，在InvocationHandler中可以获取注解上面的sql语句，执行数据库的操作**
 
@@ -251,7 +254,7 @@ public class MyFactoryBean implements FactoryBean {
         System.out.println(context.getBean("myFactoryBean"));
 ```
 
-![](https://github.com/yuanchangyue/handwritingmybais/blob/master/img/factoryBean%E8%BF%94%E5%9B%9E%E5%AF%B9%E8%B1%A1.png?raw=true)
+![](https://github.com/yuanchangyue/MybatisSampleAnalysis/blob/master/img/factoryBean%E8%BF%94%E5%9B%9E%E5%AF%B9%E8%B1%A1.png?raw=true)
 
 返回自身加上一个&
 
@@ -260,7 +263,7 @@ public class MyFactoryBean implements FactoryBean {
         System.out.println(context.getBean("&myFactoryBean"));
 ```
 
-![](https://github.com/yuanchangyue/handwritingmybais/blob/master/img/factoryBean%E8%BF%94%E5%9B%9E%E8%87%AA%E5%B7%B1.png?raw=true)
+![](https://github.com/yuanchangyue/MybatisSampleAnalysis/blob/master/img/factoryBean%E8%BF%94%E5%9B%9E%E8%87%AA%E5%B7%B1.png?raw=true)
 
 **灵活版的MyFactoryBean**
 
@@ -331,7 +334,7 @@ public class MyConfig {
         System.out.println(context.getBean("userDao"));
 ```
 
-![](https://github.com/yuanchangyue/handwritingmybais/blob/master/img/factoryBean%E8%BF%94%E5%9B%9E%E5%AF%B9%E8%B1%A1.png?raw=true)
+![](https://github.com/yuanchangyue/MybatisSampleAnalysis/blob/master/img/factoryBean%E8%BF%94%E5%9B%9E%E8%87%AA%E5%B7%B1.png?raw=true)
 
 **使用FactoryBean自定义后，在xml中及配置生效，可以返回自己本身和代理创建的对象，但是只能注册一个**
 
