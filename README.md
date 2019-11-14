@@ -73,7 +73,7 @@ SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(confi
 
 > 通过以上的Mybatis的代码可以知道, UserDao接口我们是没有自己去实现的,
 > 接口也是不能直接new出来的,只能去实现接口中的方法 
-* 实现接口1 内部类
+* 实现接口1 匿名内部类
 ```java
  UserDao userDao = new UserDao() {
             @Override
@@ -82,7 +82,7 @@ SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(confi
             }
         };
 ```
-* 实现接口2 匿名内部类
+* 实现接口2 实现类
 ```java
 public class UserDaoImpl implements UserDao {
 
@@ -358,7 +358,7 @@ public class MyConfig {
 
 +  `FactoryMothod`
 
-** 加载多个Mapper给Spring容器 ** 
+## 加载多个Mapper给Spring容器 
 > 如何加载多个Mapper给Spring?
 + XML 配置只能一个
 + 注解 不行 属性没有办法赋值
