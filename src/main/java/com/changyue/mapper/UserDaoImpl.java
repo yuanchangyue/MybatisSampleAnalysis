@@ -13,9 +13,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public List<Map<String, Object>> getList() {
-
-        //TODO 代码逻辑
-
+        //TODO JDBC代码逻辑
         return null;
     }
 }

@@ -13,17 +13,15 @@ import org.springframework.context.annotation.ImportResource;
 @ComponentScan("com.changyue")
 @Configuration
 @ImportResource("classpath:ApplicationContext.xml")
+@MyScan
 public class MyConfig {
 
-/*
-    @Bean
+/*    @Bean
     public UserDao userDao() {
-        return (UserDao) MapperSession.getMapper(UserDao.class);
-    }
-*/
+        return (UserDao) MySqlSession.getMapper(UserDao.class);
+    }*/
 
 /*
-
     @Bean
     public SqlSessionFactory sqlSessionFactory() throws Exception {
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
@@ -38,7 +36,7 @@ public class MyConfig {
         return factoryBean;
     }*/
 
- /*   *//**
+    /*   *//**
      * 配置dataSource
      *
      * @return ComboPooledDataSource

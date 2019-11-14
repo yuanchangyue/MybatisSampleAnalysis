@@ -1,4 +1,4 @@
-package com.changyue.test;
+package com.changyue.web;
 
 import org.apache.ibatis.annotations.Select;
 
@@ -12,6 +12,7 @@ import java.lang.reflect.Method;
  * @create: 2019-10-22 13:49
  */
 public class MapperInvocationHandler implements InvocationHandler {
+
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         System.out.println("连接数据库成功");
@@ -25,4 +26,5 @@ public class MapperInvocationHandler implements InvocationHandler {
         }
         return null;
     }
+
 }

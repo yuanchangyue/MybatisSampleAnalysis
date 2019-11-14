@@ -1,4 +1,4 @@
-package com.changyue.test;
+package com.changyue.web;
 
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.stereotype.Component;
@@ -16,7 +16,7 @@ public class MyFactoryBean implements FactoryBean {
 
     @Override
     public Object getObject() throws Exception {
-        return new MapperSession().getMapper(mapperInterface);
+        return new MySqlSession().getMapper(mapperInterface);
     }
 
     @Override

@@ -8,9 +8,8 @@
     <artifactId>hand-wring-mybits</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>hand-wring-mybits</name>
-    <!-- FIXME change it to the project's website -->
-    <url>http://www.example.com</url>
+    <name>hand-wring-mybaits</name>
+    <url>https://github.com/yuanchangyue/MybatisSampleAnalysis</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

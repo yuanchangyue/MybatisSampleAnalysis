@@ -22,6 +22,4 @@ public interface UserDao {
     List<Map<String, Object>> getList();
 
 
-
-
 }
